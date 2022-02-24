@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <h2 class="gym_title">Lista de los Gimnasios registrados</h2>
+    {% comment %} 
+        Nosotros recibimos object_list de la vista
+        ListGymView
+
+        Nosotros estamos recibiendo gyms que viene de
+        ListGymView: line:15
+    {% endcomment %}
+    <div>
+        <ol class="ol_container">
+            {% for gym in gyms %}
+                <li>
+                    <a href="{% url 'gym_detail' gym.pk %}">{{ gym.name }}</a>
+                </li>
+            {% endfor %}
+        </ol>
+    </div>
+{% endblock content %}
+

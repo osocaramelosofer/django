@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Django blog</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'base.css' %}">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'gym.css' %}">
+    </head>
+    <body>
+        <header>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'list_gym' %}">List Gyms</a>
+            <a href="{% url 'gym_new' %}">Add new gym</a>
+        </header>
+
+        <div class="container">
+            {% block content %}
+            {% endblock content %}
+        </div>
+
+        <footer>
+            <p>This is the footer</p>
+        </footer>
+    </body>
+</html>

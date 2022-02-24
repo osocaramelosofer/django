@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% comment %} 
+    Cuando trabajamos con DetailView, nosotros 
+    podemos hacer referencia a esa instancia del modelo
+    con el "nombre del modelo(minuscula)" o
+    con el nombre "object"
+
+    
+{% endcomment %}
+{% block content %}
+
+    <h2>This is the # {{ gym.pk }} instance</h2>
+
+    <ol class="ol_container">
+        <li>
+            Name => {{ gym.name }}
+        </li>
+        <li>
+            Location => {{ gym.location }}
+        </li>
+        <li>
+            Capacity => {{ gym.capacity }}
+        </li>
+    </ol>
+
+{% endblock content %}
